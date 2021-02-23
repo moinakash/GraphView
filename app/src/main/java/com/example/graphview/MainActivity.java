@@ -75,6 +75,9 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         {   // // X-Axis Style // //
             xAxis = chart.getXAxis();
 
+            xAxis.setAxisMaximum(2010f);
+            xAxis.setAxisMinimum(1980f);
+
             // vertical grid lines
             xAxis.enableGridDashedLine(10f, 10f, 0f);
         }
@@ -90,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
             yAxis.enableGridDashedLine(10f, 10f, 0f);
 
             // axis range
-            yAxis.setAxisMaximum(100f);
+            yAxis.setAxisMaximum(10000f);
             yAxis.setAxisMinimum(-10f);
         }
 
@@ -104,14 +107,14 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
             llXAxis.setTextSize(10f);
            // llXAxis.setTypeface(tfRegular);
 
-            LimitLine ll1 = new LimitLine(150f, "Upper Limit");
+            LimitLine ll1 = new LimitLine(9000f, "Upper Limit");
             ll1.setLineWidth(4f);
             ll1.enableDashedLine(10f, 10f, 0f);
             ll1.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_TOP);
             ll1.setTextSize(10f);
            // ll1.setTypeface(tfRegular);
 
-            LimitLine ll2 = new LimitLine(-30f, "Lower Limit");
+            LimitLine ll2 = new LimitLine(-10f, "Lower Limit");
             ll2.setLineWidth(4f);
             ll2.enableDashedLine(10f, 10f, 0f);
             ll2.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
@@ -155,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
             chart.notifyDataSetChanged();
         } else {
             // create a dataset and give it a type
-            set1 = new LineDataSet(dataValues1(), "DataSet 1");
+            set1 = new LineDataSet(dataValues1(), "Mojuri Chart");
 
             set1.setDrawIcons(false);
 
@@ -189,6 +192,7 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
             set1.setFillFormatter(new IFillFormatter() {
                 @Override
                 public float getFillLinePosition(ILineDataSet dataSet, LineDataProvider dataProvider) {
+                   // return chart.getAxisLeft().getAxisMinimum();
                     return chart.getAxisLeft().getAxisMinimum();
                 }
             });
@@ -221,24 +225,24 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
 
     private ArrayList<Entry> dataValues1(){
 
-        ArrayList<Entry> dataVals = new ArrayList<Entry>();
-        dataVals.add(new Entry(11,12));
-        dataVals.add(new Entry(25,60));
-        dataVals.add(new Entry(40,40));
-        dataVals.add(new Entry(52,25));
-        dataVals.add(new Entry(60,75));
-        dataVals.add(new Entry(75,30));
-        dataVals.add(new Entry(82,85));
+//        ArrayList<Entry> dataVals = new ArrayList<Entry>();
+//        dataVals.add(new Entry(11,12));
+//        dataVals.add(new Entry(25,60));
+//        dataVals.add(new Entry(40,40));
+//        dataVals.add(new Entry(52,25));
+//        dataVals.add(new Entry(60,75));
+//        dataVals.add(new Entry(75,30));
+//        dataVals.add(new Entry(82,85));
 
 
-           /*ArrayList<Entry> dataVals = new ArrayList<Entry>();
+           ArrayList<Entry> dataVals = new ArrayList<Entry>();
         dataVals.add(new Entry(1985,1200));
         dataVals.add(new Entry(1987,6000));
         dataVals.add(new Entry(1990,4000));
         dataVals.add(new Entry(1995,2500));
         dataVals.add(new Entry(1997,7500));
         dataVals.add(new Entry(2001,3000));
-        dataVals.add(new Entry(1006,8005));*/
+        dataVals.add(new Entry(2006,8005));
 
         return dataVals;
     }
