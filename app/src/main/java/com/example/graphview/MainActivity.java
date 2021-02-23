@@ -230,6 +230,16 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         dataVals.add(new Entry(75,30));
         dataVals.add(new Entry(82,85));
 
+
+           /*ArrayList<Entry> dataVals = new ArrayList<Entry>();
+        dataVals.add(new Entry(1985,1200));
+        dataVals.add(new Entry(1987,6000));
+        dataVals.add(new Entry(1990,4000));
+        dataVals.add(new Entry(1995,2500));
+        dataVals.add(new Entry(1997,7500));
+        dataVals.add(new Entry(2001,3000));
+        dataVals.add(new Entry(1006,8005));*/
+
         return dataVals;
     }
 
